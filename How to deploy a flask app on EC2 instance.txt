@@ -1,0 +1,20 @@
+1.Install these two packages
+-------------------------------
+sudo apt-get install gunicorn3
+sudo apt-get install nginx
+
+2.Set the port number and the host ip
+--------------------------------------
+set  app.run(host='0.0.0.0', port=8080)
+
+3.And a new inbound rule to allow access on port 8080
+-----------------------------------------------------
+Click on the running instance and select security group, add new inbound rule as custom TCP, port range is 8080
+and source is custom 0.0.0.0/0
+
+4.Use the public IPV4 address to access the app
+----------------------------------------------
+Access the app here:public IPv4:8080/
+E.g
+http://18.221.214.87:8080/
+

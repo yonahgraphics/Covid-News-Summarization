@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid News</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+  </head>
+  <body>
+    <div class="grid",
+     style="
+    display: grid;
+    width: 140em;
+    grid-gap: 6rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    align-items: start;
+    ">
+      <div class="grid-item">
+        <div class="card">
+          <img class="card-img" src="{{url_for('static', filename='assets/cases.png')}}" alt="Cases" />
+          <div class="card-content">
+            <h1 class="card-header">{{card_title1}}</h1>
+            <p class="card-text">
+            
+              {% for data, links in data_link1 %}
+              <p class="card-text", 
+              style="
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-line-clamp: 10;
+              -webkit-box-orient: vertical;
+              ">
+                {{data}}
+              </p>
+              <button class="card-btn">
+              {% for link in  links %}
+            <a style="text-decoration:none" href = "{{link}}" target="_blank">Read More</a> <span></span>
+            {% endfor %}
+          </button>
+            {% endfor %}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div class="card">
+          <img class="card-img" src="{{url_for('static', filename='assets/recoveries.jfif')}}" alt="recoveries" />
+          <div class="card-content">
+           <h1 class="card-header">{{card_title2}}</h1>
+            <p class="card-text">
+              {% for data, links in data_link2 %}
+              <p class="card-text", 
+              style="
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-line-clamp: 10;
+              -webkit-box-orient: vertical;
+              ">
+                {{data}}
+              </p>
+              <button class="card-btn">
+              {% for link in  links %}
+            <a style="text-decoration:none" href = "{{link}}" target="_blank">Read More</a> <span></span>
+            {% endfor %}
+          </button>
+            {% endfor %}
+            </p>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
